@@ -1,0 +1,37 @@
+.director-content {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    height: 100vh;
+}
+
+.directList {
+    padding: 0.9%;
+    margin: 0;
+    color: white;
+    font-size: 2vh;
+    list-style-type: none;
+}
+.directList ul li
+{
+    padding: 1%;
+    list-style-type: none;
+}
+.directList a{
+    color: red;
+    text-decoration: none;
+}
+
+.directList a:hover{
+    text-decoration: underline;
+}
+
+.director-Image {
+   width: 50%;
+   height: 50%;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,49 @@
+
+.listing table{
+    border: 2px solid white;
+    margin: 30px 0px 30px;
+}
+
+.listing table tr td{
+    padding: 20px 20px 20px;
+}
+
+.listing table tr td a{
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px 5px;
+    border: 1px;
+    border-radius: 20px;
+    background-color: red;
+    text-decoration: none;
+}
+
+.listing table tr td a:hover{
+    background-color: black;
+}
+
+.Genre_Add{
+    padding: 0px 0px 14px;
+}
+
+.Genre_Add a{
+    background-color: forestgreen;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 10px 10px;
+    border: 1px;
+    border-radius: 20px;
+    color: white;
+}
+.Genre_Add a:hover{
+   background-color: black;
+}
+
+.Genre_FormPage{
+    background-color: rgb(20,20,20);
+    margin-left: 10px;
+    color: white;
+    padding-bottom: 31.5%;
+}
+
+

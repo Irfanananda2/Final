@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="banner"><h1 >H-FLIX</h1> 
+    <div class="movie_content">
+<h2>Deleting Movie : {{ movie }}</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Confirm" class="btn btn-success"/>
+    <a href="{% url 'movies' %}" class="btn btn-danger">Cancel</a>
+</form>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+</div>
+</div>
+{% endblock %}

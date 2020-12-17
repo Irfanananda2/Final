@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+<head>{% block title %}<title>H-Flix Genre</title>{% endblock %}
+</head>
+<body>
+{% block content %}
+<div class="banner"><h1 >H-FLIX</h1>
+    <div class="content">
+        <br><h2>Genre Movie List</h2><br>
+        <p>Here you can add genre and delete it. Here are listing of genre that exist in our databases</p>
+        <div class="listing">
+            <h3>Genre List:</h3>
+            <table>
+            {% for genre in genres %}
+            <tr>
+            <td><strong>{{ genre }}</strong></td>
+            <td><a href="{% url 'edit_genre' genre.id %}">Edit</a></td>
+            <td><a href="{% url 'delete_genre' genre.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+        <div class="Genre_Add">
+            <a href="{% url 'add_genre' %}">Add Genre</a><br><br>
+            <p>Add Many Genre that you wanted :D</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>

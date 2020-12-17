@@ -1,0 +1,102 @@
+table{
+    margin-left: 25%;
+}
+
+table tr td{
+    
+    padding: 10px 10px 30px;
+    width: 175px;
+    height: 20px;
+    text-align: center;
+    color: white;
+}
+
+.banner{
+    background-color: black;
+}
+
+.banner h1{
+    font-size: 100px;
+    font-family:Impact;
+    color: red;
+    text-align: center;
+}
+
+.content{
+    padding-left: 20px;
+    padding-right: 20px; 
+    color: white;
+    height: 100%; 
+    background: rgb(20,20,20);
+}
+
+.content img{
+    margin-left: 8%;
+    width: 82%; 
+}
+
+.content p{
+    font-size: 18px;
+}
+
+.content h2{
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+.button table{
+    margin-top: 50px;
+}
+
+.button table tr td{
+    padding: 10px 10px 10px;
+    width: 175px;
+    height: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.button table tr td a{
+    background-color: red;
+    padding: 10px 20px 10px;
+    width: 80%;
+    color: white;
+    text-decoration: none;
+}
+
+.button table tr td a:hover{
+    color: black;
+    background-color: darkred;
+}
+
+.nav_sidebar{
+    margin:20px 10px 0px;
+}
+.nav_sidebar h1{
+    padding: 5px 5px 5px;
+    font-size: 50px;
+    font-family:Impact;
+    color: red;
+    text-align: center;
+    background-color: black;
+}
+
+.nav_sidebar ul {
+    padding:0px 0px 0px;
+    list-style: none;
+    font-weight: bold;
+}
+
+.nav_sidebar ul li{
+    padding:10px 0px 10px;
+}
+
+.nav_sidebar ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav_sidebar ul li a:hover{
+    color: red;
+}

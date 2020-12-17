@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+    {% block content %}
+<div class="banner"><h1>H-FLIX</h1>
+    <div class="Genre_FormPage">
+        <div class="content">
+            {% if type != 'edit' %}
+            <br><h2 style="margin-left:0px;">Add an genre</h2>
+            {% else %}
+            <br> <h2>Edit an genre</h2>
+            {% endif %}
+            
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table style="margin-left: 0px;">
+                    {{ form.as_table }}
+                </table>
+                {% if type != 'edit' %}
+                <input type="submit" value="Add" class="btn btn-primary"/>
+                {% else %}
+                <input type="submit" value="Update" class="btn btn-primary"/>
+                {% endif %}
+                <a href="{% url 'genres' %}" class="btn btn-danger">Cancel</a>
+            </form><br>
+        </div>
+    </div>
+</div>
+{% endblock %}

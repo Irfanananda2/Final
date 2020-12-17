@@ -1,0 +1,39 @@
+<head><title>home</title>
+    
+</head>
+
+<body>
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+<div class="banner"><h1 >H-FLIX</h1>
+    
+    <div class="content">
+    <h2><marquee direction="right" behavior="alternate" scrollamount="25" >Welcome !</marquee></h2>
+
+    {% load static %}
+    <img src="{% static 'img/Cinema.jpg' %}">
+    <h3>What is H-flix?</h3>
+    <p>H-flix is a movie dictionary platform that stored the data of variouses movies. You input you favorite movies in it along with it's director and genre</p>
+    <p>Here you look how many movie that you have inputed in our data</p>
+    <div class="button">
+        <table>
+        <tr>
+            <td><a href="{% url 'movies' %}">Movie</a></td>
+            <td><a href="{% url 'movies' %}">Directors</a></td>
+            <td><a href="{% url 'movies' %}">Genres</a></td>
+        </tr>
+        </table>
+    </div>
+    <table>
+        <tr>
+            <td><strong>Movies:</strong> {{ num_movies }}</td>
+            <td><strong>Directors:</strong> {{ num_directors }}</td>
+            <td><strong>Genres:</strong> {{ num_genres }}</td>
+        </tr>
+    </table>    
+    </div>
+</div>
+{% endblock %}
+</body>

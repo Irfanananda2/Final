@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+
+<div class="banner"><h1 >H-FLIX</h1> 
+
+    <div class="movie_content">
+    {% load static %}
+    <img src="{% static 'img/mulan.jpg' %}" >
+    <img src="{% static 'img/bloodshot.jpg' %}" >
+    <img src="{% static 'img/fastandfurious9.jpg' %}" >
+    <img src="{% static 'img/aquietplace2.jpg' %}" >
+    <img src="{% static 'img/avengersendgame.jpg' %}" >
+    <img src="{% static 'img/trolls.jpg' %}" >
+    
+
+<h2>All Movies Page</h2>
+<p>All Registered Movie list:</p>
+<ul>
+{% for movie in movies %}
+    <li><strong>{{ movie.title }}</strong> ({{ movie.director }}) - <a href="{% url 'edit_movie' movie.id %}" >Edit</a> - <a href="{% url 'delete_movie' movie.id %}">Delete</a></li><br>
+{% endfor %}
+</ul>
+
+<a href="{% url 'add_movie' %}">Add Movie</a>
+   
+<h3>TRENDING NOW</h3>
+
+<iframe 
+src="https://www.youtube.com/embed/DN8oebcXcMc">
+</iframe>
+</div>
+</div>
+
+{% endblock %}
