@@ -10,7 +10,7 @@ def list_movies(request):
     context = {
         'movies': movies,
     }
-    return render(request, 'movies.html', context=context)
+    return render(request, 'movie/movies.html', context=context)
 
 def add_movie(request):
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def add_movie(request):
     context = {
         'form': form
     }
-    return render(request, 'movie_form.html', context=context)
+    return render(request, 'movie/movie_form.html', context=context)
 
 
 def edit_movie(request, movie_id):
@@ -42,7 +42,7 @@ def edit_movie(request, movie_id):
         'form': form,
         'type': 'edit',
     }
-    return render(request, 'movie_form.html', context=context)
+    return render(request, 'movie/movie_form.html', context=context)
 
 
 def delete_movie(request, movie_id):
@@ -53,4 +53,4 @@ def delete_movie(request, movie_id):
     context = {
         'movie': movie,
     }
-    return render(request, 'movie_delete_form.html', context=context)
+    return render(request, 'movie/movie_delete_form.html', context=context)

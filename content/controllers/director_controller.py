@@ -10,7 +10,7 @@ def list_directors(request):
     context = {
         'directors': directors,
     }
-    return render(request, 'directors.html', context=context)
+    return render(request, 'director/directors.html', context=context)
 
 def add_director(request):
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def add_director(request):
     context = {
         'form': form
     }
-    return render(request, 'director_form.html', context=context)
+    return render(request, 'director/director_form.html', context=context)
 
 
 def edit_director(request, director_id):
@@ -42,7 +42,7 @@ def edit_director(request, director_id):
         'form': form,
         'type': 'edit',
     }
-    return render(request, 'director_form.html', context=context)
+    return render(request, 'director/director_form.html', context=context)
 
 
 def delete_director(request, director_id):
@@ -53,4 +53,4 @@ def delete_director(request, director_id):
     context = {
         'director': director
     }
-    return render(request, 'director_delete_form.html', context=context)
+    return render(request, 'director/director_delete_form.html', context=context)

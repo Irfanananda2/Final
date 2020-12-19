@@ -10,7 +10,7 @@ def list_genres(request):
     context = {
         'genres': genres,
     }
-    return render(request, 'genres.html', context=context)
+    return render(request, 'genre/genres.html', context=context)
 
 def add_genre(request):
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def add_genre(request):
     context = {
         'form': form
     }
-    return render(request, 'genre_form.html', context=context)
+    return render(request, 'genre/genre_form.html', context=context)
 
 def edit_genre(request, genre_id):
     if request.method == 'POST':
@@ -41,7 +41,7 @@ def edit_genre(request, genre_id):
         'form': form,
         'type': 'edit',
     }
-    return render(request, 'genre_form.html', context=context)
+    return render(request, 'genre/genre_form.html', context=context)
 
 def delete_genre(request, genre_id):
     genre = Genre.objects.get(pk=genre_id)
@@ -51,4 +51,4 @@ def delete_genre(request, genre_id):
     context = {
         'genre': genre
     }
-    return render(request, 'genre_delete_form.html', context=context)
+    return render(request, 'genre/genre_delete_form.html', context=context)
