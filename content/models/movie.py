@@ -1,5 +1,6 @@
 from django.db import models
 from content.models.genre import Genre
+from content.models.actor import Actor
 
 class Movie(models.Model):
     title = models.CharField(max_length=200)
@@ -7,6 +8,8 @@ class Movie(models.Model):
     synopsis = models.TextField(max_length=1000)
     rel_date = models.DateField(null=True, blank=True)
     genre = models.ManyToManyField(Genre)
+    actor = models.ManyToManyField(Actor)
+    
 
     class Meta:
         app_label = 'content'
