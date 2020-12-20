@@ -25,7 +25,6 @@ class CountryForm(ModelForm):
         fields = ['countrys']
 
 class ActorForm(ModelForm):
-
     class Meta:
         model  = Actor
         fields = ['first_name', 'last_name', 'bio', 'bod']

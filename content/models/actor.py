@@ -1,6 +1,8 @@
 from django.db import models
+from content.models.movie import Movie
 
 class Actor(models.Model):
+    actor_id = models.CharField(primary_key=True, max_length= 10)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     bio = models.CharField(max_length=500)

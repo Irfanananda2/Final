@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-fluid director-content">
+ <div class="banner container-fluid">    
+            <h1>H-FLIX</h1>
+        </div>
+{% if type != 'edit' %}
+<div class="container ">
+<h1>Add an actor</h1>
+{% else %}
+<h1>Edit an actor</h1>
+{% endif %}
+<form action="" method="POST" class="form-inline">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form}}
+    </div>
+    {% if type != 'edit' %}
+    <div class="form-group">
+    <input type="submit" value="Add" class="btn btn-primary"/>
+    {% else %}
+    <input type="submit" value="Update" class="btn btn-primary"/>
+    {% endif %}
+    <a href="{% url 'directors' %}" class="btn btn-danger">Cancel</a>
+    </div>
+</form>
+</div>
+</div>
+{% endblock %}
