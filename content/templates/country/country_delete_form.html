@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="banner"><h1>H-FLIX</h1>
+    <div class="Genre_FormPage">
+        <div class="content">
+            <br><h2>Deleting country : {{ country }}</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Confirm" class="btn btn-success"/>
+                <a href="{% url 'countrys' %}" class="btn btn-danger">Cancel</a>
+            </form><br><br><br><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
