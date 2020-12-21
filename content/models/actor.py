@@ -1,5 +1,4 @@
 from django.db import models
-from content.models.movie import Movie
 
 class Actor(models.Model):
     actor_id = models.CharField(primary_key=True, max_length= 10)
@@ -12,4 +11,4 @@ class Actor(models.Model):
         app_label = 'content'
 
     def __str__(self):
-        return f'{self.last_name}, {self.first_name}'
+        return f'{self.actor_id}, {self.first_name}, {self.last_name}, {self.bio}'
