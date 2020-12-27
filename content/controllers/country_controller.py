@@ -6,7 +6,12 @@ from content.forms import CountryForm
 from content.models.country import Country
 
 def list_country(request):
-    countrys = Country.objects.all()
+    if request.method == 'POST':
+        req = request.POST.dict()
+        name = req['name']
+        countrys = Country.objects.filter(countrys__contains=name)
+    else:
+        countrys = Country.objects.all()
     context = {
         'countrys' : countrys,
     }
