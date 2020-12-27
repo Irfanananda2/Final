@@ -1,10 +1,32 @@
 {% extends "base_generic.html" %}
-
+<head>{% block title %}<title>H-Flix Actor List</title>{% endblock %}
+</head>
+<body>
 {% block content %}
-    <ul>
-    {% for country in countrys %}
-        <li><strong>{{ country }}</strong>- <a href="{% url 'edit_country' country.id %}">Edit</a> - <a href="{% url 'delete_country' country.id %}">Delete</a></li>
-    {% endfor %}
-    </ul>
-    <a href="{% url 'add_country' %}">Add Country</a><br><br>
+<div class="banner"><h1 >H-FLIX</h1>
+    <div class="content">
+        <br><h2>Country Movie List</h2><br>
+        <p>Here you can add genre and delete it. Here are listing of genre that exist in our databases</p>
+        <div class="listing">
+            <h3>Country List:</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input name="name" type="text"/>
+                <button type="submit">Search Country</button>
+            </form>
+            <table>
+                {% for country in countrys %}
+                <tr>
+                <td><strong>{{ country }}</strong></td>
+                <td><a href="{% url 'edit_country' country.id %}">Edit</a></td>
+                <td><a href="{% url 'delete_country' country.id %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="Genre_Add">
+            <a href="{% url 'add_country' %}">Add Country</a><br><br>
+        </div>
+    </div>
+</div> 
 {% endblock %}

@@ -6,7 +6,12 @@ from content.models.genre import Genre
 from content.forms import GenreForm
 
 def list_genres(request):
-    genres = Genre.objects.all()
+    if request.method == 'POST':
+        req = request.POST.dict()
+        name = req['name']
+        genres = Genre.objects.filter(name__contains=name)
+    else:
+        genres = Genre.objects.all()
     context = {
         'genres': genres,
     }

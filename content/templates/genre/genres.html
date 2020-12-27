@@ -9,6 +9,11 @@
         <p>Here you can add genre and delete it. Here are listing of genre that exist in our databases</p>
         <div class="listing">
             <h3>Genre List:</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input name="name" type="text"/>
+                <button type="submit">Search genre</button>
+            </form>
             <table>
             {% for genre in genres %}
             <tr>
