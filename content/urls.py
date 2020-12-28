@@ -1,5 +1,5 @@
 from django.urls import path
-from content.controllers import index_controller, director_controller, movie_controller, genre_controller, country_controller
+from content.controllers import index_controller, director_controller, movie_controller, genre_controller, actor_controller, country_controller
 
 
 urlpatterns = [
@@ -16,6 +16,10 @@ urlpatterns = [
     path('genre/add', genre_controller.add_genre, name='add_genre'),
     path('genre/edit/<int:genre_id>', genre_controller.edit_genre, name='edit_genre'),
     path('genre/delete/<int:genre_id>', genre_controller.delete_genre, name='delete_genre'),
+    path('actor/', actor_controller.list_actor, name='actors'),
+    path('actor/add', actor_controller.add_actor, name='add_actor'),
+    path('actor/edit/<int:actor_id>', actor_controller.edit_actor, name='edit_actor'),
+    path('actor/delete/<int:actor_id>', actor_controller.delete_actor, name='delete_actor'),
     path('country/', country_controller.list_country, name='countrys'),
     path('country/add', country_controller.add_country, name='add_country'),
     path('country/edit/<int:country_id>', country_controller.edit_country, name='edit_country'),

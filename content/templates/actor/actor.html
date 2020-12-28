@@ -2,11 +2,23 @@
 
 {% block content %}
 <div class="container-fluid content">
-    
-
+    <div class = "banner">
+        <h1>H-FLIX</h1>
+    </div>
+    {% load static %}
+    <div class="container-fluid mx-auto d-block">
+        <h2>Registered Actors</h2>
+        <ul>
+            {% for actor in actors %}
+                <li>
+                    <strong>{{ actor }}</strong> - <a href="{% url 'edit_actor' actor.id %}">Edit</a> - <a href="{% url 'delete_actor' actor.id %}">Delete</a>
+                </li>
+            {% endfor %} 
+        </ul>
+        <p>
+            <a href="{% url 'add_actor' %}">Add an actor</a>
+        </p>
+    </div>
 </div>
-
-
-
 
 {% endblock %}
