@@ -51,6 +51,6 @@ def delete_director(request, director_id):
         director.delete()
         return HttpResponseRedirect(reverse('directors'))
     context = {
-        'director': director
+        'director': director,
     }
     return render(request, 'director/director_delete_form.html', context=context)

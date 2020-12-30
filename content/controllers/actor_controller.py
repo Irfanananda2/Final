@@ -44,11 +44,11 @@ def edit_actor(request, actor_id):
     return render(request, 'actor/actor_form.html', context=context)
 
 def delete_actor(request, actor_id):
+    actor = Actor.objects.get(pk=actor_id)
     if request.method == 'POST':
-        actor = Actor.objects.get(pk=actor_id)
         actor.delete()
         return HttpResponseRedirect(reverse('actors'))
     context = {
-        'actors': actor
+        'actors': actor,
     }
     return render(request, 'actor/actor_delete_form.html', context=context)
