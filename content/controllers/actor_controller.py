@@ -23,7 +23,7 @@ def add_actor(request):
     
     context = {
         'form': form
-    }
+    }   
     return render(request, 'actor/actor_form.html', context = context)
 
 def edit_actor(request, actor_id):
