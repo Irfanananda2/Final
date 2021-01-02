@@ -24,4 +24,6 @@ urlpatterns = [
     path('country/add', country_controller.add_country, name='add_country'),
     path('country/edit/<int:country_id>', country_controller.edit_country, name='edit_country'),
     path('country/delete/<int:country_id>', country_controller.delete_country, name='delete_country'),
+    path('movies/detail/<int:movie_id>', movie_controller.detail_movie, name='detail_movie'),
+
 ]

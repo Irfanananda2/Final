@@ -26,6 +26,13 @@ def add_movie(request):
     }
     return render(request, 'movie/movie_form.html', context=context)
 
+def detail_movie(request, movie_id):
+    movies = Movie.objects.get(pk=movie_id)
+    context = {
+        'movie' : movies,
+    }
+    return render(request, 'movie/detail_movie.html', context=context)
+
 
 def edit_movie(request, movie_id):
     if request.method == 'POST':

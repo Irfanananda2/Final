@@ -10,4 +10,4 @@ class Actor(models.Model):
         app_label = 'content'
 
     def __str__(self):
-        return f'{self.first_name}, {self.last_name}, {self.bio}'
+        return f'{self.first_name} {self.last_name}'

@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+
+<strong>Name: {{ movie.title }}</strong>
+{{ movie.director }} <br>
+{{ movie.synopsis }}<br>
+{{ movie.rel_date }}<br>
+{{ movie.actor.all|join:', ' }}<br>
+{{ movie.genre.all|join:', ' }}<br>
+{{ movie.country }}
+
+
+{% endblock %}

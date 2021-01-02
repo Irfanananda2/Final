@@ -20,7 +20,7 @@
 <p>All Registered Movie list:</p>
 <ul>
 {% for movie in movies %}
-    <li><strong>{{ movie.title }}</strong> ({{ movie.director }}) - <a href="{% url 'edit_movie' movie.id %}" >Edit</a> - <a href="{% url 'delete_movie' movie.id %}">Delete</a></li><br>
+    <li><strong><a href ="{% url 'detail_movie' movie.id %}">{{ movie.title }}</a></strong> ({{ movie.director }}) - <a href="{% url 'edit_movie' movie.id %}" >Edit</a> - <a href="{% url 'delete_movie' movie.id %}">Delete</a></li><br>
 {% endfor %}
 </ul>
 
