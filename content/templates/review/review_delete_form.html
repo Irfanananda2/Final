@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="director-content container-fluid">
+<div class="banner">
+    <h1 >H-FLIX</h1>
+</div>
+<div class="container">
+<h1>Deleting review : {{ review }}</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Confirm" class="btn btn-success"/>
+    <a href="{% url 'reviews' %}" class="btn btn-danger" style="background-color: darkred;">Cancel</a>
+</form>
+</div>
+</div>
+{% endblock %}
