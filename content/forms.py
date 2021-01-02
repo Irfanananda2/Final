@@ -28,3 +28,8 @@ class ActorForm(ModelForm):
     class Meta:
         model  = Actor
         fields = ['first_name', 'last_name', 'bio', 'bod']
+
+class ReviewForm(ModelForm):
+    class Meta:
+        model  = Review
+        fields = ['username', 'movie', 'review']
