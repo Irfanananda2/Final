@@ -11,7 +11,7 @@
         <ul>
             {% for actor in actors %}
                 <li>
-                    <strong>{{ actor }}</strong> - <a href="{% url 'edit_actor' actor.id %}">Edit</a> - <a href="{% url 'delete_actor' actor.id %}">Delete</a>
+                    <a href="{% url 'info_actor' actor.id %}"><strong>{{ actor }}</strong></a> - <a href="{% url 'edit_actor' actor.id %}">Edit</a> - <a href="{% url 'delete_actor' actor.id %}">Delete</a>
                 </li>
             {% endfor %} 
         </ul>

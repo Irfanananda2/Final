@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('actor/', actor_controller.list_actor, name='actors'),
     path('actor/add', actor_controller.add_actor, name='add_actor'),
+    path('actor/detail/<int:actor_id>', actor_controller.info_actor, name='info_actor'),
     path('actor/edit/<int:actor_id>', actor_controller.edit_actor, name='edit_actor'),
     path('actor/delete/<int:actor_id>', actor_controller.delete_actor, name='delete_actor'),
 

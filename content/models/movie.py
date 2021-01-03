@@ -15,6 +15,6 @@ class Movie(models.Model):
 
     class Meta:
         app_label = 'content'
-
+    
     def __str__(self):
         return self.title

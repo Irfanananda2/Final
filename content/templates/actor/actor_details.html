@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+<head>
+    {% block title %}<title>{{ actor.first_name }} {{ actor.last_name}}</title>{% endblock %}
+</head>
+
+{% block content %}
+
+<div style="background-color: black; color: red;">
+    <h1>{{ actor.first_name }} {{ actor.last_name}}</h1>
+    <h2>Birth: {{ actor.bod }}</h2>
+    <br>
+    <p>{{ actor.bio }}</p>
+</div>
+
+{% endblock %}

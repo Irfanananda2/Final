@@ -26,6 +26,14 @@ def add_actor(request):
     }   
     return render(request, 'actor/actor_form.html', context = context)
 
+def info_actor(request, actor_id):
+    actor = Actor.objects.get(pk=actor_id)
+    context = {
+        'actor':
+        actor
+    }
+    return render(request, 'actor/actor_details.html', context=context)
+
 def edit_actor(request, actor_id):
     if request.method == 'POST':
         actor = Actor.objects.get(pk=actor_id)
