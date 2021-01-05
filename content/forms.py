@@ -8,7 +8,6 @@ class DirectorForm(ModelForm):
         model = Director 
         fields = ['first_name', 'last_name']
 
-
 class MovieForm(ModelForm):
     class Meta:
         model = Movie  

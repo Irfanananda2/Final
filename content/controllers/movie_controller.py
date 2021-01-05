@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.models.movie import Movie
 from content.forms import MovieForm
+from django.contrib.auth.decorators import login_required
 
 def list_movies(request):
     movies = Movie.objects.all()
@@ -12,6 +13,7 @@ def list_movies(request):
     }
     return render(request, 'movie/movies.html', context=context)
 
+@login_required
 def add_movie(request):
     if request.method == 'POST':
         form = MovieForm(request.POST)
@@ -33,7 +35,7 @@ def detail_movie(request, movie_id):
     }
     return render(request, 'movie/detail_movie.html', context=context)
 
-
+@login_required
 def edit_movie(request, movie_id):
     if request.method == 'POST':
         movie = Movie.objects.get(pk=movie_id)
@@ -51,7 +53,7 @@ def edit_movie(request, movie_id):
     }
     return render(request, 'movie/movie_form.html', context=context)
 
-
+@login_required
 def delete_movie(request, movie_id):
     movie = Movie.objects.get(pk=movie_id)
     if request.method == 'POST':

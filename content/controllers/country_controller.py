@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.forms import CountryForm
 from content.models.country import Country
+from django.contrib.auth.decorators import login_required
 
 def list_country(request):
     if request.method == 'POST':
@@ -16,7 +17,8 @@ def list_country(request):
         'countrys' : countrys,
     }
     return render(request, 'country/countrys.html', context=context)
-    
+
+@login_required    
 def add_country(request):
     if request.method == 'POST':
         form = CountryForm(request.POST)
@@ -31,6 +33,7 @@ def add_country(request):
     }
     return render(request, 'country/country_form.html', context=context)
 
+@login_required
 def edit_country(request, country_id):
     if request.method == 'POST':
         country = Country.objects.get(pk=country_id)
@@ -48,6 +51,7 @@ def edit_country(request, country_id):
     }
     return render(request, 'country/country_form.html', context=context)
 
+@login_required
 def delete_country(request, country_id):
     country = Country.objects.get(pk=country_id)
     if request.method == 'POST':

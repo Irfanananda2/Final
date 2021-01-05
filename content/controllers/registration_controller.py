@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.conf import settings
-
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     msg = ''
@@ -21,7 +21,7 @@ def index(request):
             msg = ''  # empty message, no error, then send mail using configured EMAIL_HOST_USER
             send_mail(
                 'Registration Successful',
-                'You are now a member of Django Pizza!',
+                'You are now a member of Hflix!',
                 settings.EMAIL_HOST_USER,
                 [email],
                 fail_silently=True,

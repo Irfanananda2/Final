@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.models.director import Director
 from content.forms import DirectorForm
+from django.contrib.auth.decorators import login_required
 
 def list_directors(request):
     directors = Director.objects.all()
@@ -12,6 +13,7 @@ def list_directors(request):
     }
     return render(request, 'director/directors.html', context=context)
 
+@login_required
 def add_director(request):
     if request.method == 'POST':
         form = DirectorForm(request.POST)
@@ -26,7 +28,7 @@ def add_director(request):
     }
     return render(request, 'director/director_form.html', context=context)
 
-
+@login_required
 def edit_director(request, director_id):
     if request.method == 'POST':
         director = Director.objects.get(pk=director_id)
@@ -44,7 +46,7 @@ def edit_director(request, director_id):
     }
     return render(request, 'director/director_form.html', context=context)
 
-
+@login_required
 def delete_director(request, director_id):
     director = Director.objects.get(pk=director_id)
     if request.method == 'POST':

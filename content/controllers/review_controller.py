@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.models.review import Review
 from content.forms import ReviewForm
+from django.contrib.auth.decorators import login_required
 
 def list_review(request):
     reviews = Review.objects.all()
@@ -12,6 +13,7 @@ def list_review(request):
     }
     return render(request, 'review/review.html', context=context)
 
+@login_required
 def add_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -26,7 +28,7 @@ def add_review(request):
     }
     return render(request, 'review/review_form.html', context=context)
 
-
+@login_required
 def edit_review(request, review_id):
     if request.method == 'POST':
         review = Review.objects.get(pk=review_id)
@@ -44,7 +46,7 @@ def edit_review(request, review_id):
     }
     return render(request, 'review/review_form.html', context=context)
 
-
+@login_required
 def delete_review(request, review_id):
     review = Review.objects.get(pk=review_id)
     if request.method == 'POST':
