@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-fluid content" style="height: 100%; padding: 0; margin: 0; color: white;">
+        <div class="banner">    
+            <h1>H-FLIX</h1>
+        </div>
+    <div class="container-fluid center-block directList" style="margin-top: 10%; margin-left: 10%; width: 60%;">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Sypnosis</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Rating</th>
+                </tr>
+             </thead>
+            <tbody>
+                {% for show in response %}
+                    <tr>
+                        <th>{{ show.name }}</th>
+                        <td>{{ show.summary }}</td>
+                        <td>{{ show.status }}</td>
+                        <td>{{ show.rating }} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>     
+    </div>
+</div>
+{% endblock %}
