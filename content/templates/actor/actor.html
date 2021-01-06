@@ -8,6 +8,11 @@
     {% load static %}
     <div class="director-content  container-fluid mx-auto d-block">
         <h2>Registered Actors</h2>
+            <form class="form-inline md-form mr-auto mb-4" method="post" action="">
+                 {% csrf_token %}
+                <input class="form-control mr-sm-2" name="name" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search Actor</button>
+            </form>
         <ul>
             {% for actor in actors %}
                 <li>

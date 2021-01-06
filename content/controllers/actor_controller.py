@@ -6,7 +6,12 @@ from content.forms import ActorForm
 from content.models.actor import Actor
 
 def list_actor(request):
-    actors = Actor.objects.all()
+    if request.method == 'POST':
+        req = request.POST.dict()
+        name = req['name']
+        actors = Actor.objects.filter(first_name__contains=name)
+    else:
+        actors = Actor.objects.all()
     context = {
         'actors': actors,
     }
