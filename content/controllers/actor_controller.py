@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.forms import ActorForm
 from content.models.actor import Actor
+from django.contrib.auth.decorators import login_required
 
 def list_actor(request):
     if request.method == 'POST':
@@ -17,6 +18,7 @@ def list_actor(request):
     }
     return render(request, 'actor/actor.html', context=context)
 
+@login_required
 def add_actor(request):
     if request.method == 'POST':
         form = ActorForm(request.POST)
@@ -39,6 +41,7 @@ def info_actor(request, actor_id):
     }
     return render(request, 'actor/actor_details.html', context=context)
 
+@login_required
 def edit_actor(request, actor_id):
     if request.method == 'POST':
         actor = Actor.objects.get(pk=actor_id)
@@ -56,6 +59,7 @@ def edit_actor(request, actor_id):
     }
     return render(request, 'actor/actor_form.html', context=context)
 
+@login_required
 def delete_actor(request, actor_id):
     actor = Actor.objects.get(pk=actor_id)
     if request.method == 'POST':

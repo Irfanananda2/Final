@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.models.genre import Genre
 from content.forms import GenreForm
+from django.contrib.auth.decorators import login_required
 
 def list_genres(request):
     if request.method == 'POST':
@@ -17,6 +18,7 @@ def list_genres(request):
     }
     return render(request, 'genre/genres.html', context=context)
 
+@login_required
 def add_genre(request):
     if request.method == 'POST':
         form = GenreForm(request.POST)
@@ -31,6 +33,7 @@ def add_genre(request):
     }
     return render(request, 'genre/genre_form.html', context=context)
 
+@login_required
 def edit_genre(request, genre_id):
     if request.method == 'POST':
         genre = Genre.objects.get(pk=genre_id)
@@ -48,6 +51,7 @@ def edit_genre(request, genre_id):
     }
     return render(request, 'genre/genre_form.html', context=context)
 
+@login_required
 def delete_genre(request, genre_id):
     genre = Genre.objects.get(pk=genre_id)
     if request.method == 'POST':

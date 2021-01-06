@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Country(models.Model):
-    countrys = models.CharField(max_length=200)
+    countrys = models.CharField(max_length=200, blank = True)
 
     class Meta:
         app_label = 'content'

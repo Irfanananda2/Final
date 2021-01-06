@@ -5,7 +5,7 @@ from content.models.actor import Actor
 from content.models.director import Director
 
 class Movie(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, blank=False)
     director = models.ForeignKey('Director', on_delete=models.SET_NULL, null=True)
     synopsis = models.TextField(max_length=1000)
     rel_date = models.DateField(null=True, blank=True)

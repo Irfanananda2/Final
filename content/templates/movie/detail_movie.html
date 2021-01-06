@@ -3,14 +3,22 @@
 
 
 {% block content %}
+<div class="banner"><h1 >H-FLIX</h1> 
+    <div class="content">
+    <h2>Name: {{ movie.title }}</h2>
+    <br>
+    Release Date:     {{ movie.rel_date }}
+    <div class="Data">
+         <P>Synopsis: {{ movie.synopsis }}</P>
+         <P>Director: {{ movie.director }}</P>
+         <P>Country: {{ movie.country }}</P>
+         <P>Genre: {{ movie.genre.all|join:', ' }}</P>
+         <P>Actor: {{movie.actor.all|join:', ' }}</P>
+    </div>
 
-<strong>Name: {{ movie.title }}</strong>
-{{ movie.director }} <br>
-{{ movie.synopsis }}<br>
-{{ movie.rel_date }}<br>
-{{ movie.actor.all|join:', ' }}<br>
-{{ movie.genre.all|join:', ' }}<br>
-{{ movie.country }}
-
-
+    {{ movie.review }}
+    </div>
+    
+    
+</div>
 {% endblock %}
